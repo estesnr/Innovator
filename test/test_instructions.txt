@@ -1,0 +1,9 @@
+## Testing Instructions
+
+1.) Create a copy of the "config_example.yml" file in the /test directory
+2.) Rename the copy to "config.yml"
+3.) Fill in the appropriate information required in the "config.yml" file.
+4.) Open a cmd prompt
+5.) Navigate to the /test directory
+6.) Run the command "python -m unittest" and the name of the test file you want to execute.
+    Example: python -m unittest test_parts.py

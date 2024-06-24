@@ -1,0 +1,149 @@
+api: 
+
+  base_url: https://innovator.hangar18.io/InnovatorServer
+
+  client_id: TestApp
+
+  database: InnovatorSample
+
+  username: admin
+
+  password: innovator
+
+  parts:
+    # id, part_number, and description must all reference the same part for
+    # the tests to work properly
+    id: '2491803C211A435F8E96B4EC534B3F81'
+
+    part_number: '0403'
+
+    description: Clamp
+
+    create_part:
+      metadata: {
+        "item_number": "test_part_create"
+      }
+
+    update_part: {
+      create: "test_part_update",
+      update: "EyeBolt"
+    }
+
+    delete_part: {
+        item_number: "test_part_delete"
+      }
+
+    get_assembly: {
+      id: "ACEBD35B56C141A0946A2602930FAE07"
+    }
+
+    create_assembly: {
+      parent_name: "test_create_assembly_parent",
+      child_1_name: "test_create_assembly_child_1",
+      child_2_name: "test_create_assembly_child_2"
+    }
+
+    link_child_part: {
+      parent_name: "parent_bom_test",
+      child_name: "child_bom_test"
+    }
+
+    search_linked_CAD_files: {
+      assembly_id: 'FA130E28B94A4042A712ECFEA76C686E',
+      CAD_name: 'example_CAD.dwg'
+    }
+
+    link_cad_document: {
+      parent_name: 'test_link_cad_file',
+      cad_id: '2BFD80A59AD84A5387D6D910E1893E9B'
+    }
+
+  documents:
+    # id, item_number, and name must all reference the same document for the
+    # tests to work properly
+    id: "6BC0B086A6ED416E9E7F38F76F5ECBA4"
+
+    item_number: "F-22"
+
+    name: "f22.jpg"
+
+    delete_document: {
+      create_name: "test_delete_document",
+      create_number: "Test Delete Document"
+    }
+
+    create_document: {
+      create_name: "test_create_document",
+      create_number: "Test Create Document"
+    }
+
+    upload_file: {
+      local_path: "C:/Users/nestes/OneDrive - UES Inc/Desktop/ARAS Innovator/gandalf.png"
+    }
+  
+  airworthiness: {
+    get_parameter_list: {
+      parameter_id: "9DEA577EEB92430BAD0E9023A5BA5F8B"
+    },
+
+    search_aw_parameter_id: {
+      id: "9DEA577EEB92430BAD0E9023A5BA5F8B"
+    },
+
+    create_aw_parameter: {
+      parameter_name: 'test_create_aw_parameter'
+    },
+
+    delete_aw_parameter: {
+      parameter_name: 'test_delete_aw_parameter'
+    },
+
+    edit_aw_parameter: {
+      parameter_number: "test_edit_parameter",
+      standard: "new_test_standard"
+    },
+
+    get_aw_para_assessment_list: {
+      id: '302FAB761E3644F3B1AA6666C2C5D170'
+    },
+
+    search_aw_para_assessment_id: {
+      id: '302FAB761E3644F3B1AA6666C2C5D170',
+      name: 'test_aw_parameter (DO NOT DELETE)'
+    },
+
+    create_aw_para_assessment: {
+      aw_para: 'test_create_aw_assessment'
+    },
+
+    edit_aw_para_assessment: {
+      aw_para: 'test_edit_aw_assessment',
+      oem: 'test_edit_oem'
+    },
+
+    delete_aw_para_assessment: {
+      aw_para: 'test_delete_aw_para'
+    }
+  }
+
+  files: {
+    get_file_list: {
+      id: '89F7C372279A4729A874865BA2DBCE8D'
+    },
+
+    search_file_name: {
+      name: '0403.hwf'
+    },
+
+    search_file_id: {
+      id: '89F7C372279A4729A874865BA2DBCE8D'
+    },
+
+    upload_file: {
+      file: 'test_files/gandalf.jpg'
+    },
+
+    delete_file: {
+      file: 'test_files/gandalf.jpg'
+    }
+  }
